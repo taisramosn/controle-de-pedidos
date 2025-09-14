@@ -1,0 +1,26 @@
+{
+  "name": "controle-de-pedidos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taisramosn/controle-de-pedidos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taisramosn/controle-de-pedidos/issues"
+  },
+  "homepage": "https://github.com/taisramosn/controle-de-pedidos#readme",
+  "dependencies": {
+    "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
