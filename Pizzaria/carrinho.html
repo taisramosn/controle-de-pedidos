@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meu Carrinho</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-cart">
+  <header class="cart-topbar">
+    <div class="cart-title"><span class="ico">🛒</span><strong>Meu Carrinho</strong></div>
+    <button id="clearCart" class="link-danger">LIMPAR CARRINHO</button>
+  </header>
+
+  <main class="cart-container">
+    <section id="cartEmpty" class="empty">
+      <div class="circle">🧑‍🍳</div>
+      <div class="text">Nenhum item no carrinho</div>
+      <a href="cardapio.html" class="btn btn-outline">Adicionar itens</a>
+    </section>
+
+    <section id="cartFilled" hidden>
+      <div id="cartList" class="cart-list"></div>
+      <div class="cart-summary">
+        <span>Total</span>
+        <strong>R$ <span id="sumTotal">0,00</span></strong>
+      </div>
+      <div class="cart-actions">
+        <a href="cardapio.html" class="btn btn-outline">Adicionar itens</a>
+        <a href="#" class="btn btn-primary" id="goCheckout">Finalizar a compra</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Somente o JS do carrinho -->
+  <script src="js/carrinho.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('[carrinho.html] DOM pronto. Vou chamar render().');
+      if (typeof render === 'function') {
+        render();
+      } else {
+        console.error('[carrinho.html] render() não encontrada. Verifique js/carrinho.js');
+      }
+      // debug: ver a chave
+      console.log('[carrinho.html] localStorage[pizzaria_cart_v1] =', localStorage.getItem('pizzaria_cart_v1'));
+      console.log('[carrinho.html] origin =', location.origin);
+    });
+  </script>
+</body>
+</html>
+
+

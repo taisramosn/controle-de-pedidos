@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pedido Confirmado</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="page-success">
+  <!-- faixa superior -->
+  <div class="success-belt">
+    <span class="dot"></span><span>Pedido</span>
+  </div>
+
+  <main class="success-wrap">
+    <section class="success-card">
+      <div class="success-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 6L9 17l-5-5"></path>
+        </svg>
+      </div>
+
+      <h1 class="success-title">Seu pedido foi registrado!</h1>
+      <p class="success-sub">Aguarde a preparação.</p>
+
+      <!-- CONSENTIMENTO E WHATSAPP -->
+      <form id="whats-consent" class="success-consent" novalidate>
+        <label for="whatsapp" class="label">WhatsApp (obrigatório)</label>
+        <input
+          type="tel"
+          id="whatsapp"
+          name="whatsapp"
+          inputmode="tel"
+          autocomplete="tel"
+          placeholder="(41) 98765-4321"
+          required
+          pattern="^\s*(?:\+?55\s*)?(?:\(?\d{2}\)?\s*)?(?:9?\d{4})-?\d{4}\s*$"
+          class="input"
+          aria-describedby="whatsHelp"
+        />
+
+        <p id="whatsHelp" class="help">
+          Usaremos este número <strong>somente</strong> para mensagens sobre o seu pedido
+          (confirmação, andamento e retirada/entrega). Nada de promoções sem sua permissão.
+        </p>
+
+        <label class="checkbox">
+          <input type="checkbox" id="consent" name="consent" required />
+          Concordo em receber mensagens no WhatsApp sobre <strong>este pedido</strong>.
+        </label>
+
+        <button type="submit" class="btn btn-primary">Confirmar WhatsApp</button>
+      </form>
+
+      <div class="success-actions">
+        <a href="cardapio.html" class="btn btn-primary" id="btnMenu">Voltar para o menu</a>
+        <a href="cardapio.html" class="btn" id="btnHome">Página inicial</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/pedido.js"></script>
+</body>
+</html>
+

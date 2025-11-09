@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizzaria — Login</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="frame">
+      <h1 class="title">Bem vindo(a)<br>a pizzaria</h1>
+
+      <p class="hint">
+        DIGITE SEU NÚMERO DE <span class="wa">WHATSAPP</span> COM DDD PARA RECEBER O CÓDIGO DE ACESSO.
+      </p>
+
+      <form class="form" onsubmit="return false;">
+        <input class="field" type="tel" inputmode="numeric" placeholder="SEU NÚMERO COM O DDD" id="phone" />
+        <input class="field" type="text" placeholder="DIGITE SEU NOME" id="name" />
+
+        <div class="spacer-1"></div>
+
+        <button class="btn big primary" type="button" id="sendCode">
+          RECEBER O CÓDIGO DE WHATSAPP
+        </button>
+
+        <div class="spacer-2"></div>
+
+        <button class="btn big outline" type="button" id="goOn">
+          AVANÇAR
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div id="appModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="document">
+      <div class="modal-head">
+        <span id="modalTitle">Título</span>
+        <button class="modal-close" title="Fechar" aria-label="Fechar" data-close>&times;</button>
+      </div>
+      <div class="modal-body" id="modalMessage">Mensagem do modal…</div>
+      <div class="modal-actions">
+        <button class="btn tonal" data-close>Fechar</button>
+        <button class="btn primary" id="modalConfirm">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/ui.js"></script>
+  <script type="module">
+    import { openModal, alertModal } from './js/ui.js';
+
+    const phone = document.getElementById('phone');
+    const name  = document.getElementById('name');
+
+    document.getElementById('sendCode').addEventListener('click', () => {
+      if (!phone.value.trim()) {
+        return alertModal('Informe seu número com DDD para continuar.', 'Atenção');
+      }
+      alertModal('Código enviado para o seu WhatsApp (exemplo).', 'Tudo certo!');
+    });
+
+    document.getElementById('goOn').addEventListener('click', () => {
+      openModal({
+        title: 'Confirmar',
+        message: `Avançar para o <strong>cardápio</strong>?`,
+        confirmText: 'Sim, continuar',
+        onConfirm: () => location.href = 'cardapio.html'
+      });
+    });
+  </script>
+<script type="module" src="js/ui.js"></script>
+<script type="module" src="js/main.js"></script>
+
+</body>
+</html>
